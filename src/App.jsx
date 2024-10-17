@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import TodoFrom from "./components/TodoFrom";
+import TodoFrom from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 import { v4 as uuidv4 } from "uuid";
 
@@ -21,7 +21,7 @@ function App() {
       setIsEditId(null);
       setTodo('');
       return;
-       
+      
     }
 
     if (todo !== "") {
@@ -43,6 +43,7 @@ function App() {
     const filterTask = todoList.filter((todo) => todo.id !== id);
     setTodoList(filterTask);
     localStorage.setItem('todo', JSON.stringify(filterTask))
+    setTodo('')
 
     // setTodoList([...filterTask]) we can also set data like that
     // console.log(filterTask);
@@ -65,7 +66,7 @@ function App() {
   useEffect(() => {
     const todoListFromLs = localStorage.getItem('todo')
     const filterUserDataFromls = JSON.parse(todoListFromLs)
-    setTodoList(filterUserDataFromls);
+    setTodoList(filterUserDataFromls || []);
    },[])
    
 
