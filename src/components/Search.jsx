@@ -2,10 +2,10 @@ import React from "react";
 
 const Search = ({searchTxt, setSearchTxt, handleSearch}) => {
     return <>
-        <div className=" w-full flex gap-10">
+        <div className=" w-[512px] flex gap-10 justify-between">
 
         <input
-            className="  py-1 px-2 my-2 w-[80%] text-black rounded-[14px] outline-none font-semibold "
+            className="  py-2 px-3 my-2 w-[359px] text-black rounded-[14px] outline-none font-semibold "
             type="text"
             placeholder="Search your Todo.."
             value={searchTxt}
