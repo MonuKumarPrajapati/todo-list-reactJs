@@ -8,19 +8,32 @@ const TodoForm = ({ handleSubmit, setTodo, todo, isEdit }) => {
         className="flex w-[512px] justify-between  text-black"
         onSubmit={handleSubmit}
       >
+        <div className="w-full flex justify-between items-center ">
         <input
           className="  py-1 px-2 my-2 w-[80%] rounded-[14px] font-semibold "
           type="text"
+          maxLength={50}
           value={todo}
-          onChange={(e) => setTodo(e.target.value)}
+          onChange={(e) =>
+            setTodo(
+              e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1)
+            )
+          }
           placeholder="Write Your Todo"
         />
         <button
           type="submit"
-          className="  py-1 px-2 my-2 rounded-[6px] bg-slate-200  "
+          className={
+            isEdit
+              ? todo.length > 1
+                ? " rounded py-1 px-3 bg-green-500 text-white" // Save button styling
+                : " rounded py-1 px-3 bg-blue-500 text-white" // Edit button styling
+              : "  rounded py-1 px-3 bg-gray-500 text-white" // Add button styling
+          }
         >
-          {isEdit ? "Edit" : "Add"}
-        </button>
+          {isEdit ? (todo.length > 1 ? "Save" : "Edit") : "Add"}
+          </button>
+          </div>
       </form>
     </>
   );

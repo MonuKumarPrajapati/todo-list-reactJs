@@ -93,3 +93,33 @@
 // }
 
 // export default Modal
+
+// import React, { useState } from 'react'
+
+// const Modal = ({todo}) => {
+//     const [editText, setEditText] = useState(todo ? todo.todo: '')
+//     console.log(editText);
+
+//     const handleSave = () => {
+        
+//     }
+    
+//   return (
+//       <div className=' fixed top-0 right-0 bottom-0 left-0 bg-black opacity-50 flex justify-center items-center' >
+//           <div className=' bg-white p-5 rounded-xl w-[400px] shadow-sm'>
+//               <div className='mt-0'><h2>Edit Task</h2></div>
+//               <input
+//           className="  py-1 px-2 my-2 w-[80%] rounded-[14px] font-semibold "
+//           type="text"
+//           value={todo}
+//           onChange={(e) => setTodo(e.target.value)}
+//           placeholder="Write Your Todo"
+//               />
+//               <button onClick={handleSave}>Save</button>
+               
+//         </div>
+//     </div>
+//   )
+// }
+
+// export default Modal
